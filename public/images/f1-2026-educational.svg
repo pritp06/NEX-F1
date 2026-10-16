@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">A new balance of power and airflow</title>
+  <desc id="desc">An original educational side view of a generic Formula 1 car. It highlights adjustable front and rear wings, the underfloor, a 1.6 litre V6 turbo engine and energy recovery. It is not a technical drawing of a particular car.</desc>
+  <defs>
+    <linearGradient id="body" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#b89fe0"/><stop offset="1" stop-color="#60479a"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" x2="1"><stop stop-color="#c9783a" stop-opacity=".08"/><stop offset=".5" stop-color="#c9783a" stop-opacity=".62"/><stop offset="1" stop-color="#c9783a" stop-opacity=".08"/></linearGradient>
+  </defs>
+  <rect width="1200" height="680" rx="8" fill="#13101a"/>
+  <path d="M0 528H1200" stroke="#40374d" stroke-width="2"/>
+  <text x="58" y="66" fill="#b89fe0" font-family="Inter,Arial,sans-serif" font-size="17" letter-spacing="3">2026 · EDUCATIONAL OVERVIEW</text>
+  <text x="58" y="108" fill="#f0ede8" font-family="Inter,Arial,sans-serif" font-size="31" font-weight="600">A different balance of power and airflow</text>
+  <!-- wheels -->
+  <g fill="#0d0a0f" stroke="#9e98ac" stroke-width="7"><circle cx="286" cy="455" r="72"/><circle cx="884" cy="455" r="72"/></g>
+  <g fill="#1c1628" stroke="#5c5668" stroke-width="3"><circle cx="286" cy="455" r="28"/><circle cx="884" cy="455" r="28"/></g>
+  <!-- generic chassis silhouette -->
+  <path d="M102 420 200 407 265 389 360 374 446 365 495 313 541 296 656 300 701 337 791 350 858 381 1004 396 1095 416 1110 436 982 440 953 426 844 425 805 447 470 448 437 431 344 434 325 449 206 449 191 434 102 434Z" fill="url(#body)" stroke="#d8c9ef" stroke-opacity=".75" stroke-width="3"/>
+  <!-- cockpit / halo -->
+  <path d="M497 313 525 269Q582 230 642 280L662 303" fill="#1c1628" stroke="#b89fe0" stroke-width="6"/>
+  <path d="M505 305Q568 250 650 292" fill="none" stroke="#f0ede8" stroke-width="8" stroke-linecap="round"/>
+  <!-- underfloor -->
+  <path d="M416 457Q615 490 827 454" fill="none" stroke="url(#floor)" stroke-width="22"/>
+  <path d="M434 460Q615 484 808 458" fill="none" stroke="#c9783a" stroke-width="2" stroke-dasharray="8 12"/>
+  <!-- front/rear wings, movable flaps -->
+  <path d="M104 392 203 394 197 404 102 410M105 380 206 383 202 390 105 391" fill="#d9c7f5" stroke="#f0ede8" stroke-width="2"/>
+  <path d="M1008 383 1092 387 1090 397 1004 394M1013 371 1099 377 1096 384 1010 382" fill="#d9c7f5" stroke="#f0ede8" stroke-width="2"/>
+  <!-- callouts -->
+  <g fill="none" stroke="#b89fe0" stroke-width="2"><path d="M159 376V236H58"/><path d="M1050 367V236H1140"/><path d="M633 478V574H892"/><path d="M706 355V171H938"/></g>
+  <g fill="#b89fe0"><circle cx="159" cy="376" r="5"/><circle cx="1050" cy="367" r="5"/><circle cx="633" cy="478" r="5"/><circle cx="706" cy="355" r="5"/></g>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="58" y="215" fill="#f0ede8" font-size="18" font-weight="600">Movable front wing</text><text x="58" y="240" fill="#9e98ac" font-size="15">Straight and corner modes</text>
+    <text x="870" y="215" fill="#f0ede8" font-size="18" font-weight="600">Movable rear wing</text><text x="870" y="240" fill="#9e98ac" font-size="15">Straight and corner modes</text>
+    <text x="905" y="579" fill="#f0ede8" font-size="18" font-weight="600">Revised floor and diffuser</text><text x="905" y="604" fill="#9e98ac" font-size="15">Regulations reshape underbody airflow</text>
+    <text x="738" y="163" fill="#f0ede8" font-size="18" font-weight="600">1.6 L V6 turbo hybrid</text><text x="738" y="188" fill="#9e98ac" font-size="15">MGU-H removed · MGU-K up to 350 kW</text>
+    <text x="58" y="646" fill="#8f899b" font-size="13">Generic educational illustration · not to scale · not a specific car design</text>
+  </g>
+</svg>
