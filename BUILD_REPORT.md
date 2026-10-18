@@ -1,12 +1,12 @@
 # NEX build report
 
 **Developer:** Prit Patel  
-**Build date:** 16 October 2026
+**Build date:** 18 October 2026
 
 ## Delivered
 
 - React, TypeScript, and Vite single-page site with `/`, `/evolution`, `/compare`, `/technology`, `/sources`, and a custom not-found route.
-- Replaced the quiet mineral look with a high-contrast carbon palette, acid-lime and signal-red accents, oversized condensed display type, and mono technical labels.
+- Warm-white visual system with a `#F4F0E8` canvas, paper-white surfaces, charcoal typography, racing-green controls, signal-red emphasis, oversized condensed display type, and mono technical labels.
 - Homepage now opens on a scroll-reactive 3D concept car with orbit and zoom controls, animated engineering callouts, and a five-era chapter selector.
 - Interactive Three.js / React Three Fiber educational car model with a profiled chassis, drag and keyboard rotation, orbit buttons, zoom buttons, automatic rotation, scroll-linked movement, and generation-based colorways. It is clearly labeled as generic and not to scale.
 - Interactive 13-era timeline covering 1950–2026, car comparison selectors and reset, and selectable engineering topics/components.
@@ -23,12 +23,20 @@
 - Latest `npm run build` and `npm run lint` both passed. The shared JS entry is 253.14 kB (80.30 kB gzip); the car scene is a separate 6.73 kB chunk, with Three.js renderer modules separated from the app entry. The renderer is loaded only when the hero enters view.
 - Latest browser interaction check confirmed that selecting the 2022 era updates its image, year, heading, and selected state; choosing Power Unit changes the engineering heading, explanation, and selected state. Previous inspection covered desktop/mobile layout, the 3D scene, chapter next control, and Evolution, Technology, and Compare routes.
 
+## Warm-white theme update — 18 October 2026
+
+- Reworked shared background, surface, text, border, button, navigation, focus, and overlay tokens for the warm-white palette. Updated the homepage's individually styled hero, chapter, engineering, comparison, and final sections, plus the fixed desktop/mobile navigation and technical diagram colors.
+- Added scroll-to-top behavior on route changes after browser inspection showed route changes could preserve the previous page's scroll position and obscure the next page title.
+- Browser checks covered `/`, `/evolution`, `/compare`, `/technology`, `/sources`, and the custom not-found route. Tested the mobile navigation, homepage 2022 era selector, homepage and Technology power-unit selectors, Technology front-wing diagram control, Evolution next-era control, comparison car selector, and comparison reset.
+- Inspected warm-white rendering and readable typography in the homepage, Evolution, Technology, Sources, and not-found screenshots. Main text colors reach at least 5.66:1 against the warm canvas, and the core boundary color reaches at least 3.17:1 against the warm canvas and white surfaces. Full automated and viewport-wide contrast audits remain outstanding.
+- `npm run build` and `npm run lint` passed on 18 October 2026 after the theme changes.
+
 ## Verification completed
 
-- `npm run build` — passed (TypeScript and Vite production build; 16 October 2026).
-- `npm run lint` — passed with no findings (16 October 2026).
+- `npm run build` — passed (TypeScript and Vite production build; 18 October 2026).
+- `npm run lint` — passed with no findings (18 October 2026).
 - `npm run test` — not available; `package.json` has no test script.
-- Browser inspection confirmed the homepage’s 3D model, year selector, navigation, the timeline, comparison, and technology page. The 2022 era selector and Power Unit control were exercised after the redesign; both update the selected state and related content. Mobile layout was checked at 390px; desktop layout was inspected in the browser.
+- Browser inspection confirmed all routes, including the custom not-found page. The 2022 era selector, Power Unit control, timeline next button, car selector and reset, and mobile menu were exercised; each updated the selected state and/or content as expected. The current browser viewport was narrow/mobile; a complete requested device-width matrix remains outstanding.
 - Production preview served the app and direct `/evolution` navigation successfully in the earlier verification pass.
 - Image files are local; missing matching vehicles use a labeled placeholder rather than a mismatched photograph.
 - The 3D runtime is route-lazy and split into vendor chunks; the latest build completes without the oversized-chunk warning.
@@ -42,7 +50,7 @@ Wikimedia image attributions and license links are listed on `/sources`. Some co
 
 ## Remaining limits and deployment
 
-- The requested widths (320 through 1920 px) were not all individually inspected; browser inspection covered desktop and a narrow/mobile viewport. Recheck the full viewport matrix before a high-stakes public launch.
+- The requested widths (320 through 1920 px) were not all individually inspected; the current browser inspection covered a narrow/mobile viewport at approximately 604 px. Recheck the full viewport matrix before a high-stakes public launch.
 - No automated accessibility test package or test script is configured. Keyboard interactions and reduced-motion code paths were reviewed, but a formal WCAG audit remains outstanding.
-- The workspace is not currently a Git repository and no GitHub repository or Vercel deployment has been created.
-- To deploy: initialize Git in this folder, create a fresh GitHub repository, add it as `origin`, commit and push the source, then import that repository in Vercel. Vercel can use the detected Vite defaults (`npm run build`, output `dist`). The included `vercel.json` rewrites direct route requests to the SPA entry point. No environment variables are currently required.
+- The project is connected to `https://github.com/pritp06/NEX-F1` on branch `main`; the warm-white update still needs to be committed and pushed.
+- No Vercel deployment has been created. To deploy, import the GitHub repository into Vercel and use the Vite defaults (`npm run build`, output `dist`). The included `vercel.json` rewrites direct route requests to the SPA entry point. No environment variables are required.

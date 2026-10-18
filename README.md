@@ -4,6 +4,8 @@ NEX is an immersive, interactive visual history of Formula 1 car design from the
 
 The homepage centers on an interactive 3D concept car and scroll-led story chapters. Historical photography, engineering diagrams, and concise explanations support the experience across the site's timeline, comparison, and technology sections.
 
+The visual system uses a warm white `#F4F0E8` canvas, dark high-contrast typography, and restrained racing-green and signal-red accents. Photography and diagrams carry the color and energy of the experience.
+
 ## Experience NEX
 
 | Route | What you can explore |

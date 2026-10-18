@@ -36,22 +36,22 @@ function AeroDiagram() {
         {/* Defs */}
         <defs>
           <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-            <path d="M 0 0 L 8 4 L 0 8 Z" fill="#ff593f" opacity="0.7"/>
+            <path d="M 0 0 L 8 4 L 0 8 Z" fill="#a93428" opacity="1"/>
           </marker>
           <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-            <path d="M 0 0 L 8 4 L 0 8 Z" fill="#c9ff2f" opacity="0.5"/>
+            <path d="M 0 0 L 8 4 L 0 8 Z" fill="#3f5518" opacity="0.5"/>
           </marker>
         </defs>
 
         {/* Ground */}
-        <line x1="0" y1="185" x2="560" y2="185" stroke="#718084" strokeWidth="1.5"/>
-        <text x="8" y="198" fontSize="8" fill="#b4bfc0" fontFamily="Arial,sans-serif">Track surface</text>
+        <line x1="0" y1="185" x2="560" y2="185" stroke="#66716b" strokeWidth="1.5"/>
+        <text x="8" y="198" fontSize="8" fill="#414946" fontFamily="Arial,sans-serif">Track surface</text>
 
         {/* Car body */}
         <path d="M 80 135 L 120 110 L 200 105 L 330 100 L 390 108 L 420 120 L 420 155 L 330 158 L 200 158 L 120 155 Z"
-          fill="#141e22" stroke="#718084" strokeWidth="1.5"/>
+          fill="#141e22" stroke="#66716b" strokeWidth="1.5"/>
         {/* Cockpit */}
-        <path d="M 255 100 L 275 82 L 320 80 L 340 100" fill="#202a2f" stroke="#718084" strokeWidth="1"/>
+        <path d="M 255 100 L 275 82 L 320 80 L 340 100" fill="#202a2f" stroke="#66716b" strokeWidth="1"/>
         {/* Halo */}
         <path d="M 260 98 Q 297 74 334 88" fill="none" stroke="#c1cbca" strokeWidth="2.5" strokeLinecap="round"/>
 
@@ -62,11 +62,11 @@ function AeroDiagram() {
         >
           <rect x="28" y="150" width="65" height="7" rx="1"
             fill={isH('front-wing') ? 'rgba(201,255,47,0.2)' : 'rgba(20,30,34,0.8)'}
-            stroke={isH('front-wing') ? '#ff593f' : '#718084'} strokeWidth="1.5"/>
+            stroke={isH('front-wing') ? '#a93428' : '#66716b'} strokeWidth="1.5"/>
           <rect x="35" y="157" width="52" height="4" rx="1"
             fill={isH('front-wing') ? 'rgba(201,255,47,0.15)' : '#141e22'}
-            stroke={isH('front-wing') ? '#ff593f' : '#718084'} strokeWidth="1"/>
-          <text x="60" y="175" textAnchor="middle" fontSize="9" fill={isH('front-wing') ? '#c9ff2f' : '#b4bfc0'} fontFamily="Arial,sans-serif" fontWeight="600">Front Wing</text>
+            stroke={isH('front-wing') ? '#a93428' : '#66716b'} strokeWidth="1"/>
+          <text x="60" y="175" textAnchor="middle" fontSize="9" fill={isH('front-wing') ? '#3f5518' : '#414946'} fontFamily="Arial,sans-serif" fontWeight="600">Front Wing</text>
         </g>
 
         {/* Rear wing */}
@@ -76,12 +76,12 @@ function AeroDiagram() {
         >
           <rect x="440" y="72" width="70" height="10" rx="1"
             fill={isH('rear-wing') ? 'rgba(201,255,47,0.2)' : 'rgba(20,30,34,0.8)'}
-            stroke={isH('rear-wing') ? '#ff593f' : '#718084'} strokeWidth="1.5"/>
+            stroke={isH('rear-wing') ? '#a93428' : '#66716b'} strokeWidth="1.5"/>
           <rect x="450" y="82" width="50" height="5" rx="1"
             fill={isH('rear-wing') ? 'rgba(201,255,47,0.1)' : '#141e22'}
-            stroke={isH('rear-wing') ? '#ff593f' : '#718084'} strokeWidth="1"/>
-          <line x1="475" y1="87" x2="475" y2="115" stroke="#718084" strokeWidth="1"/>
-          <text x="475" y="62" textAnchor="middle" fontSize="9" fill={isH('rear-wing') ? '#c9ff2f' : '#b4bfc0'} fontFamily="Arial,sans-serif" fontWeight="600">Rear Wing</text>
+            stroke={isH('rear-wing') ? '#a93428' : '#66716b'} strokeWidth="1"/>
+          <line x1="475" y1="87" x2="475" y2="115" stroke="#66716b" strokeWidth="1"/>
+          <text x="475" y="62" textAnchor="middle" fontSize="9" fill={isH('rear-wing') ? '#3f5518' : '#414946'} fontFamily="Arial,sans-serif" fontWeight="600">Rear Wing</text>
         </g>
 
         {/* Venturi floor */}
@@ -91,8 +91,8 @@ function AeroDiagram() {
         >
           <path d="M 130 155 L 400 155 L 415 165 L 115 165 Z"
             fill={isH('floor') ? 'rgba(201,255,47,0.18)' : 'rgba(20,30,34,0.6)'}
-            stroke={isH('floor') ? '#ff593f' : '#718084'} strokeWidth="1.5"/>
-          <text x="270" y="176" textAnchor="middle" fontSize="9" fill={isH('floor') ? '#c9ff2f' : '#b4bfc0'} fontFamily="Arial,sans-serif" fontWeight="600">Venturi Floor</text>
+            stroke={isH('floor') ? '#a93428' : '#66716b'} strokeWidth="1.5"/>
+          <text x="270" y="176" textAnchor="middle" fontSize="9" fill={isH('floor') ? '#3f5518' : '#414946'} fontFamily="Arial,sans-serif" fontWeight="600">Venturi Floor</text>
         </g>
 
         {/* Diffuser */}
@@ -102,8 +102,8 @@ function AeroDiagram() {
         >
           <path d="M 400 155 L 445 148 L 445 166 L 400 165 Z"
             fill={isH('diffuser') ? 'rgba(201,255,47,0.2)' : 'rgba(20,30,34,0.6)'}
-            stroke={isH('diffuser') ? '#ff593f' : '#718084'} strokeWidth="1.5"/>
-          <text x="430" y="140" textAnchor="middle" fontSize="9" fill={isH('diffuser') ? '#c9ff2f' : '#b4bfc0'} fontFamily="Arial,sans-serif" fontWeight="600">Diffuser</text>
+            stroke={isH('diffuser') ? '#a93428' : '#66716b'} strokeWidth="1.5"/>
+          <text x="430" y="140" textAnchor="middle" fontSize="9" fill={isH('diffuser') ? '#3f5518' : '#414946'} fontFamily="Arial,sans-serif" fontWeight="600">Diffuser</text>
         </g>
 
         {/* Sidepods */}
@@ -113,24 +113,24 @@ function AeroDiagram() {
         >
           <path d="M 200 105 L 330 100 L 330 155 L 200 158 Z"
             fill={isH('sidepod') ? 'rgba(201,255,47,0.12)' : 'rgba(255,255,255,0.02)'}
-            stroke={isH('sidepod') ? '#ff593f' : 'transparent'} strokeWidth="1.5"/>
-          <text x="265" y="92" textAnchor="middle" fontSize="9" fill={isH('sidepod') ? '#c9ff2f' : '#b4bfc0'} fontFamily="Arial,sans-serif" fontWeight="600">Sidepods</text>
+            stroke={isH('sidepod') ? '#a93428' : 'transparent'} strokeWidth="1.5"/>
+          <text x="265" y="92" textAnchor="middle" fontSize="9" fill={isH('sidepod') ? '#3f5518' : '#414946'} fontFamily="Arial,sans-serif" fontWeight="600">Sidepods</text>
         </g>
 
         {/* Airflow arrows */}
         {/* Incoming flow */}
-        <line x1="8" y1="130" x2="28" y2="130" stroke="#ff593f" strokeWidth="1" opacity="0.5" markerEnd="url(#arrow)"/>
-        <line x1="8" y1="155" x2="28" y2="155" stroke="#ff593f" strokeWidth="1" opacity="0.5" markerEnd="url(#arrow)"/>
+        <line x1="8" y1="130" x2="28" y2="130" stroke="#a93428" strokeWidth="1.5" opacity="0.8" markerEnd="url(#arrow)"/>
+        <line x1="8" y1="155" x2="28" y2="155" stroke="#a93428" strokeWidth="1.5" opacity="0.8" markerEnd="url(#arrow)"/>
         {/* Under car flow */}
-        <path d="M 130 170 Q 270 172 400 168" fill="none" stroke="#c9ff2f" strokeWidth="1" opacity="0.35" markerEnd="url(#arrowBlue)" strokeDasharray="4,3"/>
+        <path d="M 130 170 Q 270 172 400 168" fill="none" stroke="#3f5518" strokeWidth="1.5" opacity="0.65" markerEnd="url(#arrowBlue)" strokeDasharray="4,3"/>
         {/* Over car flow */}
-        <path d="M 120 95 Q 270 75 420 90" fill="none" stroke="#c9ff2f" strokeWidth="1" opacity="0.25" markerEnd="url(#arrowBlue)" strokeDasharray="4,3"/>
+        <path d="M 120 95 Q 270 75 420 90" fill="none" stroke="#3f5518" strokeWidth="1.5" opacity="0.55" markerEnd="url(#arrowBlue)" strokeDasharray="4,3"/>
         {/* Downforce arrow */}
-        <line x1="270" y1="60" x2="270" y2="92" stroke="#ff593f" strokeWidth="1.5" opacity="0.6" markerEnd="url(#arrow)"/>
-        <text x="278" y="76" fontSize="7" fill="#ff593f" fontFamily="Arial,sans-serif" opacity="0.7">Downforce</text>
+        <line x1="270" y1="60" x2="270" y2="92" stroke="#a93428" strokeWidth="1.5" opacity="0.6" markerEnd="url(#arrow)"/>
+        <text x="278" y="76" fontSize="7" fill="#a93428" fontFamily="Arial,sans-serif" opacity="0.7">Downforce</text>
 
         {/* Label: educational */}
-        <text x="280" y="213" textAnchor="middle" fontSize="7.5" fill="#b4bfc0" fontFamily="Arial,sans-serif" fontStyle="italic">Simplified educational diagram — not a validated aerodynamic simulation</text>
+        <text x="280" y="213" textAnchor="middle" fontSize="7.5" fill="#414946" fontFamily="Arial,sans-serif" fontStyle="italic">Simplified educational diagram — not a validated aerodynamic simulation</text>
       </svg>
 
       {/* Detail panel */}

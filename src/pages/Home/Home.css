@@ -235,3 +235,94 @@
   .home-redesign *, .home-redesign *::before,.home-redesign *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
   .reveal { opacity:1; transform:none; }
 }
+
+/* Warm-white art direction: preserve image contrast while making every reading surface light. */
+.home-redesign { --lime:#3f5518; --red:#a93428; --paper:#171b19; --quiet:#56615d; color:var(--text-primary); background:var(--bg-primary); }
+.speed-hero { background:var(--bg-primary); }
+.hero-texture { background:radial-gradient(ellipse at 76% 46%,rgb(63 85 24 / 8%),transparent 42%),linear-gradient(111deg,transparent 47%,rgb(63 85 24 / 5%) 47.1%,transparent 47.2%); }
+.hero-texture::after { opacity:.32; background-image:linear-gradient(rgb(60 70 62 / 9%) 1px,transparent 1px),linear-gradient(90deg,rgb(60 70 62 / 9%) 1px,transparent 1px); }
+.eyebrow { color:#414946; }
+.eyebrow > span:first-child:not(.eyebrow-line):not(.live-dot) { color:#3f5518; }
+.eyebrow-line { background:#9b9b8e; }
+.hero-overline,.machine-coordinate,.hero-nudge,.hero-bottomline { color:#56615d; }
+.speed-hero h1 { color:#171b19; }
+.speed-hero h1 em,.action-quiet span,.hero-nudge span:last-child { color:#a93428; }
+.hero-deck,.chapter-intro,.engineering-intro > p:not(.eyebrow),.comparison-copy > p:not(.eyebrow) { color:#414946; }
+.action-primary { background:#26352b; color:#fffefa; }
+.action-primary:hover { background:#a93428; color:#fffefa; }
+.action-quiet { color:#343c38; }
+.action-quiet:hover { color:#a93428; }
+.hero-nudge span:last-child { animation:none; }
+.car-scene-controls { border-color:#777e77; background:rgb(251 250 247 / 96%); backdrop-filter:blur(8px); }
+.car-scene-controls button { color:#202622; }
+.car-scene-controls button:hover { color:#fffefa; background:#3f5518; }
+.machine-orbit { border-color:rgb(63 85 24 / 20%); }
+.orbit-two { border-color:rgb(23 27 25 / 14%); }
+.machine-year { color:rgb(23 27 25 / 5%); }
+.machine-caption { border-color:rgb(23 27 25 / 25%); color:#56615d; }
+.machine-spec { border-color:rgb(63 85 24 / 44%); background:rgb(251 250 247 / 92%); color:#3f5518; }
+.hero-color-swipe { background:linear-gradient(90deg,transparent,rgb(63 85 24 / 5%),rgb(169 52 40 / 7%),transparent); }
+.hero-bottomline { border-color:#85887f; }
+.hero-bottomline i { background:linear-gradient(90deg,#a93428,#3f5518); }
+
+.chapter-section { background:#eeeae1; }
+.chapter-heading h2 em,.engineering-intro h2 em,.comparison-copy h2 em { color:#a93428; }
+.chapter-feature { background:#fffefa; }
+.chapter-image-shade { background:linear-gradient(transparent,rgb(3 7 8 / 78%)); }
+.chapter-tag { color:#fffefa; }
+.chapter-giant-year { color:rgb(255 254 250 / 40%); }
+.chapter-copy .eyebrow { color:#56615d; }
+.chapter-copy h3 { color:#171b19; }
+.chapter-copy > p:not(.eyebrow) { color:#414946; }
+.text-link { border-color:#8c9087; color:#202622; }
+.text-link span,.text-link:hover { color:#a93428; }
+.text-link:hover { border-color:#a93428; }
+.chapter-progress { background:#85887f; }
+.chapter-progress span { background:#3f5518; }
+.chapter-controls { color:#414946; }
+.chapter-controls button { border-color:#777e77; color:#202622; }
+.chapter-controls button:hover { color:#fffefa; background:#3f5518; }
+.chapter-controls i { color:#66716b; }
+.chapter-selector { border-color:#85887f; }
+.chapter-selector button { border-color:#85887f; color:#414946; }
+.chapter-selector button:hover,.chapter-selector button.is-active { background:rgb(63 85 24 / 8%); color:#171b19; }
+.chapter-selector button.is-active::before { background:#a93428; }
+.selector-year { color:#3f5518; }
+.selector-name { color:#4c5753; }
+.selector-mark { color:#a93428; }
+
+.engineering-section { background:#fbfaf7; }
+.engineering-visual { border-color:#85887f; background:#fffefa; }
+.blueprint-grid { opacity:.58; background-image:linear-gradient(rgb(63 85 24 / 8%) 1px,transparent 1px),linear-gradient(90deg,rgb(63 85 24 / 8%) 1px,transparent 1px); }
+.flow-line,.downforce,.downforce-arrow { stroke:#3f5518; }
+.flow-b,.halo { stroke:#a93428; }
+.car-outline { fill:rgb(63 85 24 / 7%); }
+.car-detail { stroke:#414946; }
+.wheel { fill:#202622; stroke:#414946; }
+.wheel-inner { fill:#3f5518; }
+.diagram-label { fill:#414946; }
+.engineering-readout { border-left-color:#a93428; background:rgb(255 254 250 / 96%); box-shadow:0 5px 25px rgb(34 31 25 / 10%); }
+.engineering-readout > span { color:#3f5518; }
+.engineering-readout h3 { color:#171b19; }
+.engineering-readout p { color:#414946; }
+.engineering-tabs { background:#f4f0e8; border-color:#85887f; }
+.engineering-tabs button { border-color:#85887f; color:#414946; }
+.engineering-tabs button span { color:#56615d; }
+.engineering-tabs button:hover,.engineering-tabs button.is-active { background:#26352b; color:#fffefa; }
+.engineering-tabs button.is-active span { color:#d6ebad; }
+
+.comparison-break { background:#eeeae1; }
+.comparison-visual::after { background:linear-gradient(transparent,rgb(5 8 9 / 78%)); }
+.comparison-image-label { color:#fff; }
+.comparison-x { color:#fffefa; }
+.comparison-copy > p:not(.eyebrow) { color:#414946; }
+.home-finale { background:#f4f0e8; color:#171b19; }
+.home-finale .eyebrow { color:#414946; }
+.home-finale .eyebrow span:first-child { color:#a93428; }
+.home-finale h2 em { color:#a93428; }
+.finale-noise { opacity:.045; }
+.finale-year { color:rgb(23 27 25 / 5%); }
+.finale-bottom { border-color:rgb(23 27 25 / 24%); color:#414946; }
+.finale-bottom a { background:#26352b; color:#fffefa; }
+.finale-bottom a:hover { background:#a93428; color:#fffefa; }
+.home-redesign :focus-visible { outline-color:#a93428; }

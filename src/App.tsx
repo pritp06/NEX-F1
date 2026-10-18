@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Nav } from './components/Nav/Nav';
 import { Footer } from './components/Footer/Footer';
@@ -30,6 +30,10 @@ function PageLoader() {
 
 function AnimatedRoutes() {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
 
   return (
       <Suspense fallback={<PageLoader />} key={location.pathname}>

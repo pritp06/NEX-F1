@@ -8,11 +8,11 @@ import './Home.css';
 const CarScene = lazy(() => import('../../components/CarScene/CarScene').then((module) => ({ default: module.CarScene })));
 
 const moments = [
-  { year: 1950, name: 'The beginning', tag: 'A simpler silhouette', copy: 'Before wings and carbon fibre, the racing car was a long nose, a steel frame and a driver out in the open.', image: '/images/f1-1952-ferrari-500.jpg', alt: 'Ferrari 500, a front-engined Grand Prix car from the early championship years', color: '#f1eadd' },
-  { year: 1962, name: 'The monocoque', tag: 'One shell changes everything', copy: 'Lotus made the body do structural work. A lighter, stiffer shell changed how a racing car could be built.', image: '/images/f1-1962-lotus-25.jpg', alt: 'Lotus 25, the aluminium monocoque design associated with the 1962 season', color: '#d6f36b' },
-  { year: 1978, name: 'The floor becomes a wing', tag: 'Ground effect', copy: 'The underside became an aerodynamic surface. The Lotus 79 turned the track itself into part of the design.', image: '/images/f1-1978-lotus-79.jpg', alt: 'Lotus 79 ground-effect car at speed', color: '#f0b83e' },
-  { year: 1988, name: 'Power, compressed', tag: 'The turbo peak', copy: 'Turbocharged 1.5-litre engines pushed the limits of power, packaging and fuel strategy.', image: '/images/f1-1988-mclaren-mp4-4.jpg', alt: 'McLaren MP4/4 from the 1988 turbo era', color: '#f05c45' },
-  { year: 2022, name: 'Air from underneath', tag: 'Ground effect returns', copy: 'Venturi tunnels returned beneath the floor, with regulations designed to reduce the aerodynamic wake.', image: '/images/f1-2022-red-bull-rb18.jpg', alt: 'Red Bull RB18, representative of the 2022 ground-effect generation', color: '#a5d8ee' },
+  { year: 1950, name: 'The beginning', tag: 'A simpler silhouette', copy: 'Before wings and carbon fibre, the racing car was a long nose, a steel frame and a driver out in the open.', image: '/images/f1-1952-ferrari-500.jpg', alt: 'Ferrari 500, a front-engined Grand Prix car from the early championship years', color: '#76612b' },
+  { year: 1962, name: 'The monocoque', tag: 'One shell changes everything', copy: 'Lotus made the body do structural work. A lighter, stiffer shell changed how a racing car could be built.', image: '/images/f1-1962-lotus-25.jpg', alt: 'Lotus 25, the aluminium monocoque design associated with the 1962 season', color: '#506311' },
+  { year: 1978, name: 'The floor becomes a wing', tag: 'Ground effect', copy: 'The underside became an aerodynamic surface. The Lotus 79 turned the track itself into part of the design.', image: '/images/f1-1978-lotus-79.jpg', alt: 'Lotus 79 ground-effect car at speed', color: '#8b5a00' },
+  { year: 1988, name: 'Power, compressed', tag: 'The turbo peak', copy: 'Turbocharged 1.5-litre engines pushed the limits of power, packaging and fuel strategy.', image: '/images/f1-1988-mclaren-mp4-4.jpg', alt: 'McLaren MP4/4 from the 1988 turbo era', color: '#a93428' },
+  { year: 2022, name: 'Air from underneath', tag: 'Ground effect returns', copy: 'Venturi tunnels returned beneath the floor, with regulations designed to reduce the aerodynamic wake.', image: '/images/f1-2022-red-bull-rb18.jpg', alt: 'Red Bull RB18, representative of the 2022 ground-effect generation', color: '#315d70' },
 ];
 
 const components = [
@@ -93,7 +93,7 @@ export function Home() {
           <div className="blueprint-grid" aria-hidden="true" />
           <svg className={`flow-diagram part-${activePart.id}`} viewBox="0 0 800 440" role="img" aria-labelledby="diagram-title diagram-desc">
             <title id="diagram-title">Educational Formula 1 engineering diagram</title><desc id="diagram-desc">A simplified original side profile of a Formula 1 car, with animated airflow lines underneath and above the car.</desc>
-            <defs><linearGradient id="carLine" x1="0" x2="1"><stop offset="0" stopColor="#c9ff2f"/><stop offset="1" stopColor="#ff593f"/></linearGradient></defs>
+            <defs><linearGradient id="carLine" x1="0" x2="1"><stop offset="0" stopColor="#3f5518"/><stop offset="1" stopColor="#a93428"/></linearGradient></defs>
             <path className="flow-line flow-a" d="M20 122 C150 120 200 170 330 166 S570 152 780 166"/><path className="flow-line flow-b" d="M20 202 C142 198 208 214 300 210 S590 208 780 216"/><path className="flow-line flow-c" d="M20 292 C142 278 205 286 310 286 S590 278 780 296"/>
             <path className="car-outline" d="M116 270 L160 260 L235 254 Q270 205 314 202 L362 208 L406 244 L570 252 L637 264 L675 268 L677 280 L614 284 L577 309 L536 310 L513 286 L288 286 L265 316 L225 316 L204 285 L118 282 Z"/>
             <path className="car-detail" d="M272 254 L298 218 L348 220 L385 253 M389 254 L462 256 M467 258 L525 261 M145 273 L207 274 M600 265 L657 269"/>
