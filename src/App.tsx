@@ -2,9 +2,11 @@ import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Nav } from './components/Nav/Nav';
 import { Footer } from './components/Footer/Footer';
+import { Home } from './pages/Home/Home';
 
-// Lazy-load pages for performance
-const Home = lazy(() => import('./pages/Home/Home').then(m => ({ default: m.Home })));
+// Keep the landing route in the initial bundle: a short Suspense placeholder
+// was being replaced by the full editorial home page on slow mobile networks,
+// producing a large cumulative layout shift on the most visited route.
 const Evolution = lazy(() => import('./pages/Evolution/Evolution').then(m => ({ default: m.Evolution })));
 const Compare = lazy(() => import('./pages/Compare/Compare').then(m => ({ default: m.Compare })));
 const Technology = lazy(() => import('./pages/Technology/Technology').then(m => ({ default: m.Technology })));
