@@ -64,5 +64,5 @@ Wikimedia image attributions and license links are listed on `/sources`. Some co
 
 - The requested widths (320 through 1920 px) were not all individually inspected; the current browser inspection covered a narrow/mobile viewport at approximately 604 px. Recheck the full viewport matrix before a high-stakes public launch.
 - No automated accessibility test package or test script is configured. Keyboard interactions and reduced-motion code paths were reviewed, but a formal WCAG audit remains outstanding.
-- The project is connected to `https://github.com/pritp06/NEX-F1` on branch `main`; the warm-white theme commit `895b8bb` was previously pushed. The performance update described above still needs to be committed and pushed.
-- No Vercel deployment has been created. To deploy, import the GitHub repository into Vercel and use the Vite defaults (`npm run build`, output `dist`). The included `vercel.json` rewrites direct route requests to the SPA entry point. No environment variables are required.
+- The performance update and README/report changes were committed as `b9722de` and pushed to `main` at `https://github.com/pritp06/NEX-F1`.
+- The developer's screenshot shows the existing site at `https://nex-f1.vercel.app`. This turn did not verify whether Vercel completed a deployment for `b9722de`; check its latest deployment before expecting the optimization to appear live. The configured Vite build uses `npm run build` with output `dist`, and `vercel.json` rewrites direct route requests to the SPA entry point. No environment variables are required.

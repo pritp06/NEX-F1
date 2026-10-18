@@ -108,11 +108,6 @@ npm run preview
 
 Vite writes static production files to `dist/`. The root `vercel.json` rewrites incoming paths to `/index.html`, allowing client-side routes such as `/evolution` to load directly and survive refreshes.
 
-To publish through Vercel:
+The project is connected to [pritp06/NEX-F1](https://github.com/pritp06/NEX-F1). If the Vercel project is linked to that repository, a push to `main` should trigger a deployment. For a new Vercel project, import the GitHub repository and use Vite's settings: build command `npm run build`, output directory `dist`, and no environment variables. After deployment, verify the home page and direct refreshes on `/evolution`, `/compare`, `/technology`, and `/sources`.
 
-1. Create a Git repository for this project and push it to a new GitHub repository.
-2. Import that GitHub repository into Vercel.
-3. Use Vite's detected settings: build command `npm run build`, output directory `dist`, and no environment variables.
-4. Deploy and verify the home page and direct refreshes on `/evolution`, `/compare`, `/technology`, and `/sources`.
-
-No GitHub repository or Vercel deployment is included by this project configuration. See [BUILD_REPORT.md](./BUILD_REPORT.md) for the latest verification status and outstanding checks.
+See [BUILD_REPORT.md](./BUILD_REPORT.md) for the latest verification status, deployment state, and remaining checks.
