@@ -30,7 +30,11 @@
 .car-scene-controls { position:absolute; z-index:8; right:8%; bottom:12%; display:flex; gap:5px; padding:5px; border:1px solid rgb(233 241 232 / 24%); background:rgb(8 12 15 / 70%); backdrop-filter:blur(8px); }
 .car-scene-controls button { display:grid; place-items:center; width:33px; height:31px; border:0; background:transparent; color:#eaf0e8; font:20px/1 'DM Mono',monospace; cursor:pointer; transition:background .18s ease,color .18s ease; }
 .car-scene-controls button:hover { color:#10150c; background:var(--lime); }
-.machine-fallback { position:absolute; z-index:1; width:80%; height:80%; inset:10%; object-fit:contain; opacity:.6; filter:grayscale(.25) contrast(1.12); }
+.machine-fallback { position:absolute; z-index:1; width:96%; height:92%; inset:4% 2%; object-fit:contain; }
+.model-launch { position:absolute; z-index:6; left:50%; bottom:15%; display:inline-flex; align-items:center; gap:20px; min-height:44px; padding:0 15px; transform:translateX(-50%); border:1px solid #9aa38d; background:rgb(251 250 247 / 96%); color:#26352b; font:600 9px 'DM Mono',monospace; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; cursor:pointer; transition:background .2s ease,color .2s ease,border-color .2s ease; }
+.model-launch:hover { border-color:#26352b; background:#26352b; color:#fffefa; }
+.model-launch span { color:#a93428; font-size:15px; }
+.model-launch:focus-visible { outline:3px solid #a93428; outline-offset:4px; }
 .machine-orbit { position:absolute; z-index:0; left:50%; top:48%; width:min(95%,720px); aspect-ratio:1; border:1px solid rgb(201 255 47 / 11%); border-radius:50%; transform:translate(-50%,-50%) rotate(-17deg) scaleY(.34); }
 .orbit-two { width:78%; border-color:rgb(230 240 234 / 12%); transform:translate(-50%,-50%) rotate(22deg) scaleY(.5); }
 .machine-coordinate { position:absolute; z-index:4; top:12%; right:2%; color:#869397; font:8px/1.8 'DM Mono',monospace; letter-spacing:.1em; text-align:right; }
@@ -173,6 +177,7 @@
   .action-quiet { font-size:9px; }
   .hero-nudge { display:none; }
   .hero-machine { height:clamp(310px,88vw,430px); min-height:0; margin:4px -18px 0; }
+  .model-launch { bottom:14%; min-height:40px; padding-inline:12px; font-size:8px; }
   .machine-coordinate { top:6%; right:6%; font-size:7px; }
   .machine-year { top:10%; right:3%; font-size:47vw; }
   .machine-caption { left:9%; right:9%; bottom:3%; font-size:7px; }

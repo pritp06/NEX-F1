@@ -2,7 +2,7 @@
 
 NEX is an immersive, interactive visual history of Formula 1 car design from the championship's 1950 beginning through the 2026 regulation generation. It is designed as an editorial portfolio experience: follow the ideas that changed the shape, speed, and safety of the car.
 
-The homepage centers on an interactive 3D concept car and scroll-led story chapters. Historical photography, engineering diagrams, and concise explanations support the experience across the site's timeline, comparison, and technology sections.
+The homepage centers on an original concept car illustration and scroll-led story chapters. Visitors can choose to load and orbit the interactive 3D version. Historical photography, engineering diagrams, and concise explanations support the experience across the site's timeline, comparison, and technology sections.
 
 The visual system uses a warm white `#F4F0E8` canvas, dark high-contrast typography, and restrained racing-green and signal-red accents. Photography and diagrams carry the color and energy of the experience.
 
@@ -26,7 +26,7 @@ The visual system uses a warm white `#F4F0E8` canvas, dark high-contrast typogra
 - Framer Motion and CSS for page, chapter, and interface motion
 - CSS Modules and shared CSS tokens for page styling
 
-The Three.js scene and route pages are code-split. The homepage mounts the 3D scene when it approaches the viewport and unmounts it when it leaves, keeping its rendering work scoped to the hero experience.
+The Three.js scene and route pages are code-split. The first page view uses a lightweight local SVG poster; the Three.js renderer is downloaded and mounted only after a visitor activates the 3D model. This keeps WebGL startup and rendering out of the initial page load while preserving the interactive model on demand.
 
 ## Run locally
 
@@ -72,11 +72,18 @@ Historical content is kept separately from page presentation in `src/data/`. Sha
 
 ## Motion, 3D, and accessibility
 
-- The homepage car can be rotated by dragging or keyboard controls; on-screen orbit and zoom controls are also available.
-- Scrolling through the hero changes the car's orientation. Era chapters and engineering topics update the related text and imagery when selected.
+- Activate **Explore the interactive 3D model** in the homepage hero to load the car. It can then be rotated by dragging or keyboard controls; on-screen orbit and zoom controls are also available.
+- After activation, scrolling through the hero changes the car's orientation. Era chapters and engineering topics update the related text and imagery when selected.
 - CSS and Framer Motion provide restrained entrance, route, and interaction transitions.
 - The site reads the system `prefers-reduced-motion` setting and reduces decorative movement and the 3D scene's automatic and scroll-linked motion.
 - Controls use visible focus styling and semantic labels. The design adapts its timeline, navigation, and page layouts for narrow screens.
+
+## Performance notes
+
+- The homepage poster is an original local SVG (about 4 KB). It does not load a remote image, font service, or tracking script.
+- Route content is lazy-loaded. The Three.js / React Three Fiber chunks are requested only after activating the 3D model; before activation, no WebGL context is created.
+- Historical photos are local and content images use lazy loading where they appear below the fold. The 3D canvas uses a capped pixel ratio and a default-power GPU preference.
+- Run `npm run build` for the production bundle and serve it with `npm run preview` before running Lighthouse. Performance scores depend on the device, network, and Lighthouse run; this repository does not guarantee a fixed score.
 
 The 3D car is an original educational concept illustration. It is not a dimensionally accurate model or a replica of a specific regulated car. Engineering diagrams are explanatory illustrations, not aerodynamic or mechanical simulations.
 

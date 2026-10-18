@@ -29,8 +29,8 @@ function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; 
 export function Home() {
   const [activeMoment, setActiveMoment] = useState(2);
   const [activePart, setActivePart] = useState(components[0]);
+  const [interactiveModelEnabled, setInteractiveModelEnabled] = useState(false);
   const progressRef = useRef<HTMLSpanElement>(null);
-  const [modelRef, modelVisible] = useIntersection<HTMLDivElement>({ threshold: 0, rootMargin: '160px 0px 160px 0px', once: false });
   const reducedMotion = useReducedMotion();
   const moment = moments[activeMoment];
 
@@ -65,12 +65,13 @@ export function Home() {
           <div className="hero-nudge"><span className="nudge-line" /><span>SCROLL TO ENTER THE STORY</span><span aria-hidden="true">↓</span></div>
         </div>
 
-        <div ref={modelRef} className="hero-machine" aria-label="Interactive 3D concept Formula 1 car">
+        <div className="hero-machine" aria-label="Formula 1 concept car illustration">
           <div className="machine-orbit orbit-one" aria-hidden="true" /><div className="machine-orbit orbit-two" aria-hidden="true" />
           <div className="machine-coordinate" aria-hidden="true">NEX / CFD—01<br />46° 31′ 12″ N</div>
           <div className="machine-year" aria-hidden="true">76</div>
-          {modelVisible ? <Suspense fallback={<img className="machine-fallback" src={moment.image} alt="" />}>{!reducedMotion && <CarScene year={2026} autoRotate />}{reducedMotion && <CarScene year={2026} autoRotate={false} />}</Suspense> : <img className="machine-fallback" src={moment.image} alt="" />}
-          <div className="machine-caption"><span>NX—01 / CONCEPT MACHINE</span><span>DRAG TO ORBIT</span></div>
+          {interactiveModelEnabled ? <Suspense fallback={<img className="machine-fallback" src="/images/nex-car-poster.svg" alt="" />}>{!reducedMotion && <CarScene year={2026} autoRotate />}{reducedMotion && <CarScene year={2026} autoRotate={false} />}</Suspense> : <img className="machine-fallback" src="/images/nex-car-poster.svg" alt="Original isometric illustration of a generic Formula 1 concept car, not a specific regulated car." fetchPriority="high" decoding="async" />}
+          {!interactiveModelEnabled && <button className="model-launch" type="button" onClick={() => setInteractiveModelEnabled(true)}>Explore the interactive 3D model <span aria-hidden="true">↗</span></button>}
+          <div className="machine-caption"><span>NX—01 / CONCEPT MACHINE</span><span>{interactiveModelEnabled ? 'DRAG TO ORBIT' : 'INTERACTIVE 3D / OPTIONAL'}</span></div>
           <span className="machine-spec spec-front">01 / AERO</span><span className="machine-spec spec-rear">02 / HYBRID</span>
           <div className="hero-color-swipe" aria-hidden="true" />
         </div>

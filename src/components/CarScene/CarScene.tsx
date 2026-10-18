@@ -32,7 +32,11 @@ function Body({ year, autoRotate, dragRotation, zoom }: { year: number; autoRota
 
   useFrame((_, delta) => {
     if (group.current) {
-      const scrollOffset = !reducedMotion ? Math.min(window.scrollY / Math.max(window.innerHeight, 1), 4) * 0.22 : 0;
+      if (reducedMotion) {
+        group.current.rotation.y = dragRotation;
+        return;
+      }
+      const scrollOffset = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 4) * 0.22;
       group.current.rotation.y += (dragRotation + scrollOffset - group.current.rotation.y) * 0.1 + (autoRotate && !reducedMotion ? delta * 0.055 : 0);
     }
   });
@@ -124,6 +128,7 @@ export function CarScene({ year, autoRotate }: { year: number; autoRotate: boole
   const [dragRotation, setDragRotation] = useState(-0.55);
   const [zoom, setZoom] = useState(1);
   const drag = useRef<{ x: number; rotation: number } | null>(null);
+  const reducedMotion = useReducedMotion();
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).closest('button')) return;
@@ -144,8 +149,8 @@ export function CarScene({ year, autoRotate }: { year: number; autoRotate: boole
   };
 
   return (
-    <div className="car-scene" role="group" aria-label="Interactive three-dimensional educational Formula 1 car model. Drag to orbit or use the arrow keys." onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp} onKeyDown={handleKeyDown}>
-      <Canvas camera={{ position: [6.2, 4.5, 7.5], fov: 34 }} dpr={[1, 1.2]} gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }} onCreated={({ gl }) => gl.setClearAlpha(0)}>
+    <div className="car-scene" role="group" aria-label="Interactive three-dimensional educational Formula 1 car model. Drag to orbit or use the arrow keys." tabIndex={0} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp} onKeyDown={handleKeyDown}>
+      <Canvas frameloop={reducedMotion ? 'demand' : 'always'} camera={{ position: [6.2, 4.5, 7.5], fov: 34 }} dpr={[1, 1.1]} gl={{ alpha: true, antialias: true, powerPreference: 'default' }} onCreated={({ gl }) => gl.setClearAlpha(0)}>
         <ambientLight intensity={1.25} />
         <directionalLight position={[5, 8, 5]} intensity={2.3} color="#fff7e5" />
         <directionalLight position={[-5, 4, -6]} intensity={1.25} color="#b8e8e0" />
